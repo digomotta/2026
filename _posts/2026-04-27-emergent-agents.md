@@ -17,7 +17,7 @@ authors:
   - name: Anonymous
 
 # must be the exact same name as your blogpost
-bibliography: 2026-04-27-GenAgents.bib
+bibliography: 2026-04-27-emergent-agents.bib
 
 # Add a table of contents to your post.
 toc:
@@ -63,7 +63,7 @@ While Language Models capture statistical relationships in human data, they lack
 
 The core architecture adopted by <d-cite key="park2023"></d-cite>, formalized within the CoALA framework by <d-cite key="sumers2024cognitivearchitectureslanguageagents"></d-cite>, treats the LLM as a central processor with a limited context window, which can be understood as the working-memory of the agent. To overcome this limitation, <d-cite key="park2023"></d-cite> employed a Memory Stream that logs experiences into a database. A retrieval function dynamically populates working memory based on relevance, recency, and semantic similarity, while Reflection synthesizes these logs into high-level semantic memories. Temporal coherence is achieved through planning a hierarchical mechanism that translates semantic conclusions into action sequences, allowing the agent to dynamically balance daily schedules with reactions to spontaneous stimuli.
 
-{% include figure.liquid path="assets/img/2026-04-27-GenAgents/cognitive_architecture.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2026-04-27-emergent-agents/cognitive_architecture.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
     Cognitive architecture overview. Image from <d-cite key="sumers2024cognitivearchitectureslanguageagents"></d-cite>.
 </div>
@@ -72,7 +72,7 @@ The core architecture adopted by <d-cite key="park2023"></d-cite>, formalized wi
 
 Agents require a grounded existence to manifest behavior in the environment and with one another. In the "Smallville" simulation <d-cite key="park2023"></d-cite>, the environment is represented by a semantic tree (e.g., School → Classroom) translated into natural language. This allows agents to textually perceive and manipulate their surroundings. The system supports complex social dynamics and human-in-the-loop interactions, where users can directly alter environmental states or inject directives via an "inner voice" mechanism. This interaction model supports different scenarios, such as a hospital—similar to Smallville—where agents can be patients, nurses, and doctors treating diseases <d-cite key="li2025agenthospitalsimulacrumhospital"></d-cite>. However, the interaction model can also be defined by a set of coordinates, where agents receive information from their surroundings <d-cite key="takata2025emergent"></d-cite>, or by a network, such as our multi-agent marketplace, which models interactions as a time-varying directed probability network.
 
-{% include figure.liquid path="assets/img/2026-04-27-GenAgents/gabm_and_interactivemodel.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2026-04-27-emergent-agents/gabm_and_interactivemodel.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
     A complex system visualization of GABM and an Interaction Model. A schematic representation of the recursive coupling between agent and system states. Figure inspired by <d-cite key="LU2024283"></d-cite>; images adapted from <d-cite key="takata2025emergent,park2023"></d-cite>.
 </div>
@@ -117,7 +117,7 @@ To extend the study of emergence into financial domains, we applied GABM within 
 
 Building on this architecture, retrieved contexts fuel a reflection stage where agents synthesize observations through the lens of their unique personalities, shaping attributes such as risk tolerance and negotiation stance. Ultimately, these cognitive states dictate economic actions, as agents dynamically update production targets based on expected demand, driven by past interactions, and modulate their pricing strategies according to real-time inventory constraints.
 
-{% include figure.liquid path="assets/img/2026-04-27-GenAgents/cogntive.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2026-04-27-emergent-agents/cogntive.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
     Our Cognitive architecture overview, inspired by <d-cite key="park2023"></d-cite> with inventory and production planning addition.
 </div>
@@ -142,7 +142,7 @@ At each time step, agent $$ i $$ interacts with $$ j $$ with probability $$ P(A_
 
 The interaction network is a time-varying matrix of probabilities $$ W_t $$ where $$ w_{ij}(t) $$ is the probability that agent $$ i $$ interacts with agent $$ j $$ at time $$ t $$.
 
-{% include figure.liquid path="assets/img/2026-04-27-GenAgents/agentmarket_graph.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2026-04-27-emergent-agents/agentmarket_graph.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
     Our interaction model, a time-varying weighted directed graph.
 </div>
@@ -153,14 +153,14 @@ To investigate the emergence of social structure, we initialized the simulation 
 
 As illustrated below, the network exhibits significant topological drift, quickly departing from its initial uniform state to fluctuate between distinct regimes of connectivity. Crucially, Maximum Likelihood Estimation of the node strength distribution reveals the emergence of a scale-free architecture over every scoring cycle. The observed exponent ($$ \alpha \approx 2.12 $$) signifies that the probability of a node having a certain strength decays relatively slowly, placing the system within the 'classic' range of natural complex networks like the Internet or metabolic pathways <d-cite key="PhysRevE.67.026112"></d-cite>. These networks follow a power law, characterized by a few dominant hubs among many sparsely connected nodes. This analysis captures the system's trajectory from randomness through intermediate phases of self-organization, demonstrating how connection probabilities evolve into a structured, hierarchical topology.
 
-{% include figure.liquid path="assets/img/2026-04-27-GenAgents/graphs.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2026-04-27-emergent-agents/graphs.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
     Network topology evolution showing emergent scale-free properties and hierarchical structure.
 </div>
 
 Quantitative analysis of the network connectivity indicates a stabilization period following the initial configuration. The system's Global Efficiency rises sharply in the early cycles, peaking around cycle 5 before settling into a slightly lower steady state. This decline may connect with a gradual increase in the PageRank Gini coefficient, suggesting that as the network matures, influence becomes somewhat more concentrated, which correlates with a minor reduction in global integration. Meanwhile, Dyadic Reciprocity remains relatively high (>0.6) throughout the simulation, consistently exceeding levels expected in random or strictly hierarchical graphs. Together, these metrics characterize a system that evolves into a widely connected, feedback-rich structure with moderate centralization, rather than converging toward a pure star or random connectivity. Of course this is just preliminary result as serves as a motivation for more complex systems oriented approaches.
 
-{% include figure.liquid path="assets/img/2026-04-27-GenAgents/graph_metrics.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2026-04-27-emergent-agents/graph_metrics.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
     Plot with the Global Efficiency and Centrality (PageRank) over scoring cycles.
 </div>
@@ -169,14 +169,14 @@ Quantitative analysis of the network connectivity indicates a stabilization peri
 
 Below, we present the final agreement phase. Here, the agents aren't just haggling; they are engaging in a culturally rich exchange. Note how Pema constructs a complex bundle—trading 'wild cliff honey' (80) against an 'underwater light' (85), and accurately computes the cash remainder, all while exchanging pleasantries like 'dhanyabad' and 'Que maravilha'. It is high-stakes trading, handled with grace.
 
-{% include figure.liquid path="assets/img/2026-04-27-GenAgents/chat_example.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2026-04-27-emergent-agents/chat_example.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
     Verbatim transcript of the negotiation settlement. Pema offers a split-payment trade (goods + currency), which Bianca accepts in the subsequent turn.
 </div>
 
 We also tried to identify which characteristics of agent interactions lead to a good trade. In order to verify this we applied LLM as judge to give sentiment analysis scores, this method was chosen over sentiment-BERT, since most of the models cannot deal with large corpus of data, such as a whole interaction between the agents. We observe a positive Spearman correlation between trade value and positive score for the conversation ($$ r=0.33, p<0.001 $$) and a slightly negative correlation for negative scores ($$ r=-0.12, p<0.001 $$).
 
-{% include figure.liquid path="assets/img/2026-04-27-GenAgents/sentiment_analysis.png" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid path="assets/img/2026-04-27-emergent-agents/sentiment_analysis.png" class="img-fluid rounded z-depth-1" %}
 <div class="caption">
     The scatter plot in blue shows the positive correlation between the log trade value, to facilitate visualization, and positive sentiment score. In the red scatter plot, the negative correlation between the log trade value and negative sentiment score.
 </div>
