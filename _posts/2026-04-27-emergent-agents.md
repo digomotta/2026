@@ -35,7 +35,8 @@ toc:
   - name: "AgentMarket: A Dynamic Network of Generative Agents"
     subsections:
       - name: Time-Varying Network Interaction Model
-      - name: Results
+      - name: Simulation and Network Dynamics
+      - name: Natural Language and Sentiment Analysis
   - name: Challenges and Future
     subsections:
       - name: Alignment
